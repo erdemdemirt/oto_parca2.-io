@@ -9,13 +9,9 @@ export default defineConfig({
   plugins: [
     tsConfigPaths(),
     tanstackStart({
-      router: {
-        // Router dosyasının tam yolunu belirtmek hatayı çözer
-        entry: "./src/router.tsx",
-      },
-      server: { 
-        entry: "./src/server.ts" 
-      },
+      // router veya server girdilerini elle zorlamıyoruz;
+      // TanStack Start src/router.tsx ve src/server.ts'i otomatik bulur.
+      server: { entry: "server" },
     }),
     nitro(),
     viteReact(),
